@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,5 @@ use App\Http\Controllers\PostController;
 //     return view('welcome');
 // });
 
-Route::get('/',function (){
-    return view('dashboard');
-});
-
-Route::get('/data', [PostController::class, 'index']);
+Route::get('/index',[IndexController::class, 'index']);
+Route::get('/detail/movie/{id}',[IndexController::class, 'detail']);
